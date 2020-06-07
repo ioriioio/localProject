@@ -1,0 +1,191 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.7
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: 2020 年 6 月 07 日 18:25
+-- サーバのバージョン： 5.6.38
+-- PHP Version: 7.2.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `HALsyupre`
+--
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `storeEat`
+--
+
+CREATE TABLE `storeEat` (
+  `id` int(11) NOT NULL,
+  `storeId` int(20) NOT NULL,
+  `eatName` varchar(255) NOT NULL,
+  `price` int(20) NOT NULL,
+  `offer` int(1) NOT NULL,
+  `imgUrl` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `storeEat`
+--
+
+INSERT INTO `storeEat` (`id`, `storeId`, `eatName`, `price`, `offer`, `imgUrl`) VALUES
+(8, 1, '111', 1111, 0, '/IW32_syupure/halSyupre/storage/app/images/store/image1.jpg'),
+(9, 1, '111', 111, 0, ''),
+(10, 1, '111', 111, 0, '/IW32_syupure/halSyupre/storage/app/images/store/image10.jpg'),
+(11, 5, 'ポテト', 210, 2, '/IW32_syupure/halSyupre/storage/app/images/store/image11.jpg'),
+(12, 1, '餃子', 260, 2, '/IW32_syupure/halSyupre/storage/app/images/store/image12.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `stores`
+--
+
+CREATE TABLE `stores` (
+  `id` int(20) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `adressSum` int(7) NOT NULL,
+  `adress` varchar(255) NOT NULL,
+  `lunchTime` varchar(20) NOT NULL,
+  `lunchprice` int(20) NOT NULL,
+  `dinnerTime` varchar(20) NOT NULL,
+  `dinnerprice` int(30) NOT NULL,
+  `seat` int(10) NOT NULL,
+  `carStay` int(1) NOT NULL,
+  `smoke` int(1) NOT NULL,
+  `cash` int(1) NOT NULL,
+  `pass` varchar(255) NOT NULL,
+  `imgUrl` varchar(255) NOT NULL,
+  `imgUrl2` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `stores`
+--
+
+INSERT INTO `stores` (`id`, `name`, `adressSum`, `adress`, `lunchTime`, `lunchprice`, `dinnerTime`, `dinnerprice`, `seat`, `carStay`, `smoke`, `cash`, `pass`, `imgUrl`, `imgUrl2`) VALUES
+(1, 'test', 123456, '大阪府大阪市北区', '10:00〜14:00(LO13:45)', 1000, '18:00〜23:30(LO23:00)', 3000, 20, 0, 1, 1, '$2y$10$/k.9u/Yhv3mVYn4y4qbTP.h5SjtNX1dhtvGjBv9auyOFZuDOEOyK6', '', ''),
+(2, 'admin', 123456, '大阪府大阪市北区', '9:00〜15:00(LO14:30)', 800, '18:00〜24:00(LO23:30)', 3000, 50, 0, 0, 1, '$2y$10$co4z1rGB0eWmQeL4qsSdX.GO9BpAdjYfWK6J3IYVccbGccsuoaD3.', '', ''),
+(3, 'aaa', 5820007, '大阪府大阪市北区', '11:00〜15:00(LO14:00)', 1000, '17:30〜23:45(LO23:30)', 2500, 31, 0, 0, 1, '$2y$10$.fXhUnyIsBgSEHuwx6vb0uDokqvWOoBQtvV/wJJh2RU4cwt7GNT/m', '', ''),
+(4, 'ドンキホーテ', 11111111, '大阪府大阪市阿倍野区3-3-3', '9:00〜13:30(LO13:00)', 1111, '18:00〜24:00(LO23:30)', 2222, 11, 1, 1, 1, '$2y$10$fwAJSo7oNHksJbquzRWKeuEbyndN6JFWr1cFU9volVlHqJ1PqFDL.', '', ''),
+(5, 'ドミノ', 12333333, '東京都墨田区', '8:00〜10:00(LO9:30)', 1000, '18:00〜22:00(LO21:30)', 2000, 20, 0, 0, 0, '$2y$10$TCGuMNs1dlZuZdr3qS7JFODub3BVFL3nY4ZU3dX6M9oGqUvLDSTYu', '/IW32_syupure/halSyupre/storage/app/images/stores/image5-1.jpg', '/IW32_syupure/halSyupre/storage/app/images/stores/image5-2.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `tel` varchar(15) NOT NULL,
+  `birthday` varchar(10) NOT NULL,
+  `pass` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `tel`, `birthday`, `pass`) VALUES
+(1, 'adamin', 'yahoo@yahooac.jp', '0120500500', '1998-06-09', 'admin'),
+(4, '左近　惟織', 'iori4.23@icloud.com', '08024505701', '1998-04-23', 'iori1004'),
+(5, '左近　いおり', 'iori@icloud.com', '08024505701', '2020-02-13', 'おぽぽぽp'),
+(6, '左近　いおり', 'iori@icloud.com', '08024505701', '2020-02-13', 'おぽぽぽp'),
+(7, 'マクドナルド', 'iori@icloud.com', '08024505701', '2020-02-22', 'ssss'),
+(8, 'マクドナルド', 'iori@icloud.com', '08024505701', '2020-02-22', 'ssss'),
+(9, 'test', 'iori@icloud.com', '08024505701', '2020-02-07', 'oooo'),
+(10, 'test', 'ddd@dd.d', '0000000000', '2020-02-07', 'uuuuuu'),
+(11, 'マクドナルド', 'iori@icloud.com', '08024505701', '2020-02-15', 'ppp'),
+(12, '1111', 'iopri@osos.ssp', '1111', '2020-03-01', '1111'),
+(13, 'adad', 'aaa@aa.aa', '1101010', '2020-03-09', 'aaaa');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `userReserve`
+--
+
+CREATE TABLE `userReserve` (
+  `id` int(11) NOT NULL,
+  `userId` varchar(255) NOT NULL,
+  `storeId` int(11) NOT NULL,
+  `reserveId` int(11) NOT NULL,
+  `sum` int(3) NOT NULL,
+  `date` date NOT NULL,
+  `complet` int(1) NOT NULL,
+  `time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `userReserve`
+--
+
+INSERT INTO `userReserve` (`id`, `userId`, `storeId`, `reserveId`, `sum`, `date`, `complet`, `time`) VALUES
+(5, 'adamin', 1, 12, 10, '2020-03-29', 1, ''),
+(6, 'adamin', 1, 8, 8, '2020-03-17', 1, ''),
+(7, 'adamin', 1, 8, 4, '2020-03-02', 1, '6:00'),
+(8, 'adamin', 1, 12, 5, '2020-03-27', 1, '10:00');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `storeEat`
+--
+ALTER TABLE `storeEat`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `stores`
+--
+ALTER TABLE `stores`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `userReserve`
+--
+ALTER TABLE `userReserve`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `storeEat`
+--
+ALTER TABLE `storeEat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `stores`
+--
+ALTER TABLE `stores`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `userReserve`
+--
+ALTER TABLE `userReserve`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
