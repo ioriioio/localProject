@@ -1,0 +1,48 @@
+#topimg{
+    background-color: #ffffff;
+    height: 87.5vh;
+}
+
+#topImg{
+    width: 80%;
+    height: 85vh;
+    margin-left: 10%;
+}
+
+/* おすすめ表示 */
+
+#mainContent1{
+    padding: 5%;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#mainContent1>div{
+    border: 0.5px solid #000000;
+    width: 100%;
+    height: 20vh;
+}
+
+/* 期間限定表示部分 */
+#mainContent2{
+    padding: 5%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#mainContent2>div{
+    border: 0.5px solid #000000;
+    width: 100%;
+    height: 20vh;
+}
+
+#map{
+    margin-left: 15%;
+}
+
+#areaname{
+    width:100%;
+    text-align: center;
+    font-size: 20pt;
+}

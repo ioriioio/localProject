@@ -1,0 +1,106 @@
+/* ボタンの処理 */
+#search,　#search2{
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#search dl{
+    text-align: right;
+    width: 90%;
+    display: flex;
+}
+
+#search dd{
+    text-align: left;
+    width: 60%;
+    padding-left: 3%;
+}
+
+#search dt{
+    width: 40%;
+}
+
+#search2 dl{
+    text-align: right;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#search2 dd{
+    text-align: left;
+    width: 50%;
+    text-align: center;
+}
+
+#search2 dt{
+    width: 50%;
+    text-align: center;
+}
+
+
+.btn-square {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: #f9a9ae;
+    margin-top: 1%;
+    margin-left: 80%;
+    width: 90px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+    font-weight: bold;
+    background: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+}
+
+.btn-square:active {
+    /*押したとき*/
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);/*沈むように*/
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    background-image: linear-gradient(#fed6e3 0%, #ffbcbc 100%);/*グラデーションを明るく*/
+}
+
+
+
+/* 検索タブ切り替え */
+#sarchTab{
+    padding: 2%;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+.tab {
+	list-style: none;
+}
+
+#sarchTab>ul{
+    list-style: none;
+}
+
+.tab{overflow:hidden;}
+.tab li{
+    background:rgb(179, 179, 179); 
+    padding-top:1.5%; 
+    padding-bottom:1.5%; 
+    float:left; 
+    margin-right:1px;
+    width: 20%;
+    text-align: center;
+    font-weight: bold;
+}
+.tab li.select{background:rgb(235, 238, 255);}
+.content li{
+    background:rgb(235, 238, 255); 
+    padding:20px;
+}
+.hide {display:none;}
