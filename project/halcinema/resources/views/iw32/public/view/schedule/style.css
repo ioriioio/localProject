@@ -1,0 +1,163 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+#title{
+    background-image: url(tokunoshimaIMGL4490_TP_V.jpg);
+    height: 50vh;
+    background-repeat: no-repeat;
+}
+
+h1{
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    font-style: oblique;
+    font-family: "ヒラギノ角ゴ ProN W3";
+    padding: 11% 0;
+}
+
+h2{
+    margin-left: 30%;
+}
+
+#schedule{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+iframe{
+    margin-left: 22%;
+}
+
+#screen>p{
+    border:solid 1px #000;
+    padding: 0.5%;
+}
+
+#screen{
+    display:flex;
+}
+
+
+#main_sc{
+    border:solid 2px #5ab4bd;
+    
+}
+
+#schedule_1 ul{
+    border-bottom: solid 1px #000;
+    margin-left: 2%;
+    margin-right: 2%;
+    list-style: none;
+}
+
+
+#sc_vi{
+    border-bottom: solid 1px #000;
+    margin-left: 2%;
+    margin-right: 2%;
+    list-style: none;
+    display: flex;
+    height: 22vh;
+    padding: 1%;
+    
+}
+
+#sc_vi2{
+    margin-left: 2%;
+    margin-right: 2%;
+    list-style: none;
+    display: flex;
+    height: 22vh;
+    padding: 1%;
+}
+
+#sc_1{
+    width: 35%;
+    margin-left: 5%;
+}
+
+#sc_1 p{
+    font-size: 10pt;
+    margin-left: 5%; 
+}
+
+
+#main_sc img{
+    width:200px;
+    height: 20vh;
+}
+
+#mv_title{
+    margin-top: 5%;
+    list-style: none;
+    color: #000;
+}
+
+#sc_time{
+    text-align: center;
+    margin-top: 10%; 
+}
+
+
+
+
+
+EDIT ON
+
+/*タブ切り替え全体のスタイル*/
+.tabs {
+margin-top: 50px;
+padding-bottom: 40px;
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+width: 700px;
+margin: 0 auto;}
+
+/*タブのスタイル*/
+.tab_item {
+width: calc(100%/3);
+height: 50px;
+border-bottom: 3px solid #5ab4bd;
+background-color: #d9d9d9;
+line-height: 50px;
+font-size: 16px;
+text-align: center;
+color: #565656;
+display: block;
+float: left;
+text-align: center;
+font-weight: bold;
+transition: all 0.2s ease;
+}
+.tab_item:hover {
+opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+display: none;
+clear: both;
+overflow: hidden;
+}
+
+
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked ~ #all_content,
+#programming:checked ~ #programming_content,
+#design:checked ~ #design_content {
+display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+background-color: #5ab4bd;
+color: #fff;
+}

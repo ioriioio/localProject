@@ -1,0 +1,388 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.7
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: 2020 年 6 月 10 日 03:43
+-- サーバのバージョン： 5.6.38
+-- PHP Version: 7.2.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `movies`
+--
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `boards`
+--
+
+CREATE TABLE `boards` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `post_period` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `boards`
+--
+
+INSERT INTO `boards` (`id`, `title`, `category`, `post_period`, `created_at`, `updated_at`) VALUES
+(1, '天気の子', 'story', '2019-11-29 23:46:48', NULL, NULL),
+(2, 'いあああ', 'story', '2019-11-29 15:02:53', NULL, NULL),
+(4, 'asdfghjk', 'sdfghjkl;', '2019-11-29 15:22:10', NULL, NULL),
+(5, 'あsdfg', 'あsdfg', '2019-11-29 15:24:16', NULL, NULL),
+(6, 'asdfrth', 'ffiua', '2019-11-29 15:24:58', NULL, NULL),
+(7, 'asdfg', 'asdfg', '2019-11-29 15:25:18', NULL, NULL),
+(9, 'aaaa', 'feaff', '2019-11-29 19:48:11', NULL, NULL),
+(10, 'aaa', 'afafeaf', '2019-11-29 19:49:50', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `board_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comment` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `report` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `comments`
+--
+
+INSERT INTO `comments` (`id`, `user_id`, `board_id`, `comment`, `report`, `created_at`, `updated_at`) VALUES
+(8, '1', '1', 'fofgjo@aejia', NULL, '2019-11-29 14:56:29', NULL),
+(10, '1', '1', 'gegj@aija', NULL, '2019-11-29 14:56:46', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `managers`
+--
+
+CREATE TABLE `managers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `employee＿number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `managers`
+--
+
+INSERT INTO `managers` (`id`, `name`, `employee＿number`, `password`, `created_at`, `updated_at`) VALUES
+(1, 'admin', '12345', '123456789', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2019_11_07_071210_create_comments_table', 2),
+(3, '2019_11_07_071226_create_movies_table', 2),
+(4, '2019_11_07_071359_create_boards_table', 2),
+(5, '2019_11_07_071424_create_schedules_table', 2),
+(6, '2019_11_07_071447_create_managers_table', 2),
+(7, '2019_11_14_071938_create_m_histries_table', 3),
+(8, '2019_11_14_073229_create_m_histories_table', 4);
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `movies`
+--
+
+CREATE TABLE `movies` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `screening_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `make_time` date NOT NULL,
+  `director_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `main_actor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `movie_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `movie_information` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `movies`
+--
+
+INSERT INTO `movies` (`id`, `title`, `screening_time`, `make_time`, `director_name`, `main_actor`, `movie_image`, `movie_information`, `created_at`, `updated_at`) VALUES
+(1, 'aaa', '2:15', '2019-11-20', 'iii', 'uuu', '24口ハブ.jpg', 'info', NULL, NULL),
+(2, 'aaa', '2:15', '2019-11-20', 'iii', 'uuu', '24口ハブ.jpg', 'info', NULL, NULL),
+(3, 'aaa', '2:15', '2019-11-20', 'iii', 'uuu', '24口ハブ.jpg', 'info', NULL, NULL),
+(4, 'aaa', '2:15', '2019-11-20', 'iii', 'uuu', '24口ハブ.jpg', 'info', NULL, NULL),
+(5, 'aaa', '2:15', '2019-11-20', 'iii', 'uuu', '24口ハブ.jpg', 'info', NULL, NULL),
+(6, 'haif', '4:7', '2019-11-15', 'fafha', 'akfkajn', 'forest-office-655x424.jpg', 'asdfghjkl', NULL, NULL),
+(7, 'qwerty', '15:12', '2019-11-11', 'nvak', 'falfi', 'images.png', 'yayaya', NULL, NULL),
+(8, 'qwerty', '15:12', '2019-11-11', 'nvak', 'falfi', 'images.png', 'yayaya', NULL, NULL),
+(9, 'qwerty', '15:12', '2019-11-11', 'nvak', 'falfi', 'images.png', 'yayaya', NULL, NULL),
+(10, 'uiyfia', '14:13', '2019-11-20', 'nv;ka', 'dvf,anlk', '24口ハブ.jpg', '12345678', NULL, NULL),
+(11, 'uiyfia', '14:13', '2019-11-20', 'nv;ka', 'dvf,anlk', '24口ハブ.jpg', '12345678', NULL, NULL),
+(12, '887', '5:10', '2019-11-20', 'anv;q', 'vkavba', 'macpro.jpeg', 'ugaoufgaa@p', NULL, NULL),
+(13, '887', '5:10', '2019-11-20', 'anv;q', 'vkavba', 'macpro.jpeg', 'ugaoufgaa@p', NULL, NULL),
+(14, '887', '5:10', '2019-11-20', 'anv;q', 'vkavba', 'macpro.jpeg', 'ugaoufgaa@p', NULL, NULL),
+(15, '887', '5:10', '2019-11-20', 'anv;q', 'vkavba', 'macpro.jpeg', 'ugaoufgaa@p', NULL, NULL),
+(16, '887', '5:10', '2019-11-20', 'anv;q', 'vkavba', 'macpro.jpeg', 'ugaoufgaa@p', NULL, NULL),
+(17, '887', '5:10', '2019-11-20', 'anv;q', 'vkavba', 'macpro.jpeg', 'ugaoufgaa@p', NULL, NULL),
+(18, '887', '5:10', '2019-11-20', 'anv;q', 'vkavba', 'macpro.jpeg', 'ugaoufgaa@p', NULL, NULL),
+(19, '887', '5:10', '2019-11-20', 'anv;q', 'vkavba', 'macpro.jpeg', 'ugaoufgaa@p', NULL, NULL),
+(20, '887', '5:10', '2019-11-20', 'anv;q', 'vkavba', 'macpro.jpeg', 'ugaoufgaa@p', NULL, NULL),
+(21, '887', '5:10', '2019-11-20', 'anv;q', 'vkavba', 'macpro.jpeg', 'ugaoufgaa@p', NULL, NULL),
+(22, '887', '5:10', '2019-11-20', 'anv;q', 'vkavba', 'macpro.jpeg', 'ugaoufgaa@p', NULL, NULL),
+(23, '887', '5:10', '2019-11-20', 'anv;q', 'vkavba', 'macpro.jpeg', 'ugaoufgaa@p', NULL, NULL),
+(24, '887', '5:10', '2019-11-20', 'anv;q', 'vkavba', 'macpro.jpeg', 'ugaoufgaa@p', NULL, NULL),
+(25, '天気の子', '8:16', '2019-11-05', '新海誠', '知らん', '/Applications/XAMPP/xamppfiles/temp/phpe3HNGH', 'いい感じ', NULL, NULL),
+(26, '天気の子', '8:16', '2019-11-05', '新海誠', '知らん', '/Applications/XAMPP/xamppfiles/temp/phpAp3qN3', 'いい感じ', NULL, NULL),
+(27, '天気の子', '8:16', '2019-11-05', '新海誠', '知らん', '/Applications/XAMPP/xamppfiles/temp/phpAp3qN3', 'いい感じ', NULL, NULL),
+(28, '天気の子', '8:16', '2019-11-05', '新海誠', '知らん', '天気のこ.png', 'いい感じ', NULL, NULL),
+(29, '天気のこ', '3:3', '2019-12-11', '新海誠', '知らん', '2560x1600x923c2f6a94770f10473ddb.jpg', 'うんこ', NULL, NULL),
+(30, 'オニオン', '4:5', '2018-11-30', 'おに', '玉ねぎ', '2560x1600x923c2f6a94770f10473ddb.jpg', 'こここk', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `m_histories`
+--
+
+CREATE TABLE `m_histories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `content` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `update_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `update_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `m_histories`
+--
+
+INSERT INTO `m_histories` (`id`, `content`, `update_user`, `update_at`) VALUES
+(1, 'スケジュール追加', 'admin\r\n', '2019-11-14 00:00:00'),
+(2, '映画追加', 'admin', '2019-11-15 15:09:19'),
+(3, '映画追加', 'admin', '2019-11-15 15:26:33'),
+(4, '映画追加', 'admin', '2019-11-15 15:26:49'),
+(5, '映画追加', 'admin', '2019-11-15 15:30:49'),
+(6, '映画追加', 'admin', '2019-11-15 15:31:11'),
+(7, '映画追加', 'admin', '2019-11-15 15:31:28'),
+(8, '映画追加', 'admin', '2019-11-15 15:34:11'),
+(9, '映画追加', 'admin', '2019-11-15 15:35:18'),
+(10, '映画追加', 'admin', '2019-11-15 15:35:39'),
+(11, '映画追加', 'admin', '2019-11-15 15:36:05'),
+(12, '映画追加', 'admin', '2019-11-15 15:36:46'),
+(13, '映画追加', 'admin', '2019-11-15 15:37:28'),
+(14, '映画追加', 'admin', '2019-11-15 15:41:33'),
+(15, '映画追加', 'admin', '2019-11-15 15:42:05'),
+(16, '映画追加', 'admin', '2019-11-15 15:48:16'),
+(17, '映画追加', 'admin', '2019-11-15 15:48:51'),
+(18, '映画追加', 'admin', '2019-11-26 12:56:33'),
+(19, '映画追加', 'admin', '2019-11-26 12:58:18'),
+(20, '映画追加', 'admin', '2019-11-26 12:58:33'),
+(21, '映画追加', 'admin', '2019-11-26 12:59:15'),
+(22, '掲示板を追加しました', 'admin', '2019-11-29 15:02:53'),
+(23, '掲示板を追加しました', 'admin', '2019-11-29 15:21:58'),
+(24, '掲示板を追加しました', 'admin', '2019-11-29 15:22:10'),
+(25, '掲示板を追加しました', 'admin', '2019-11-29 15:24:16'),
+(26, '掲示板を追加しました', 'admin', '2019-11-29 15:24:58'),
+(27, '掲示板を追加しました', 'admin', '2019-11-29 15:25:18'),
+(28, '掲示板を追加しました', 'admin', '2019-11-29 15:25:46'),
+(29, '掲示板を追加しました', 'admin', '2019-11-29 19:49:50'),
+(30, '映画追加', 'admin', '2019-12-03 15:39:14'),
+(31, '映画追加', 'admin', '2019-12-03 15:39:45'),
+(32, '掲示板を追加しました', 'admin', '2019-12-03 15:40:21'),
+(33, '映画追加', 'admin', '2019-12-05 15:34:44'),
+(34, '映画追加', 'admin', '2019-12-05 15:35:34'),
+(35, '映画追加', 'admin', '2019-12-05 16:43:50'),
+(36, '映画追加', 'admin', '2019-12-05 16:54:10'),
+(37, '映画追加', 'admin', '2019-12-06 15:49:43'),
+(38, '映画追加', 'admin', '2019-12-10 15:26:04');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `schedules`
+--
+
+CREATE TABLE `schedules` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `screen_no` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `start_at` datetime NOT NULL,
+  `start_time` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `end_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `movie_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `schedules`
+--
+
+INSERT INTO `schedules` (`id`, `screen_no`, `start_at`, `start_time`, `end_time`, `movie_id`, `created_at`, `updated_at`) VALUES
+(1, 'スクリーン1', '2019-11-06 00:00:00', '14:56:57', '15:56:57', '25', NULL, NULL),
+(2, 'スクリーン1', '2019-12-04 00:00:00', '15:39:41', '16:39:41', '25', NULL, NULL),
+(3, 'スクリーン2', '2019-12-05 00:00:00', '11:35:22', '16:35:22', '30', NULL, NULL),
+(4, 'スクリーン2', '2019-12-05 00:00:00', '17:43:27', '17:43:27', '25', NULL, NULL),
+(5, 'スクリーン2', '2019-12-05 00:00:00', '07:53:35', '09:53:35', '25', NULL, NULL),
+(6, 'スクリーン1', '2019-12-06 00:00:00', '15:47:32', '16:47:32', '30', NULL, NULL),
+(7, 'スクリーン1', '2019-12-06 00:00:00', '18:48:00', '20:48:00', '25', NULL, NULL),
+(8, 'スクリーン2', '2019-12-06 00:00:00', '15:49:38', '16:49:38', '30', NULL, NULL),
+(9, 'スクリーン1', '2019-12-10 00:00:00', '15:25:57', '16:25:57', '30', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'admin@admin.com', NULL, '123456789', 'inu', NULL, NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `boards`
+--
+ALTER TABLE `boards`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `managers`
+--
+ALTER TABLE `managers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `movies`
+--
+ALTER TABLE `movies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `m_histories`
+--
+ALTER TABLE `m_histories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `schedules`
+--
+ALTER TABLE `schedules`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `boards`
+--
+ALTER TABLE `boards`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `managers`
+--
+ALTER TABLE `managers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `movies`
+--
+ALTER TABLE `movies`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT for table `m_histories`
+--
+ALTER TABLE `m_histories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `schedules`
+--
+ALTER TABLE `schedules`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
